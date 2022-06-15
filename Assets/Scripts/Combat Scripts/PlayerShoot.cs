@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    // Creëer schiet & herlaad acties.
+
     public static Action shootInput;
     public static Action reloadInput;
 
-    [SerializeField] private KeyCode reloadKey;
+    [SerializeField] private KeyCode reloadKey = KeyCode.R;
 
     private void Update()
     {
-        // Als je de linker muis knop indrukt dan schiet je.
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetMouseButton(0))
         {
-            Debug.Log("LMB pressed");
+            Debug.Log("Shot");
             shootInput?.Invoke();
         }
 
-        // Als je op R of de reload key drukt dan herlaad je je wapen.
-        if (Input.GetKey(reloadKey))
+        if (Input.GetKeyDown(reloadKey))
         {
-            Debug.Log("Key R pressed!");
+            Debug.Log("Reloading");
             reloadInput?.Invoke();
-        }
+        } 
     }
 }

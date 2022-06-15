@@ -15,8 +15,8 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-        // PlayerShoot.shootInput += Shoot;
-        // PlayerShoot.reloadInput += StartReload;
+        PlayerShoot.shootInput += Shoot;
+        PlayerShoot.reloadInput += StartReload;
     }
 
     private void FixedUpdate()
@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
     }
     private void OnGunShot()
     {
-        
+
     }
 
     public void Shoot()
